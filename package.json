@@ -1,0 +1,23 @@
+{
+  "name": "worker-axiom",
+  "version": "1.0.0",
+  "description": "Axiom wrapper for Cloudflare workers",
+  "keywords": [
+    "axiom",
+    "workers",
+    "cloudflare",
+    "monitoring",
+    "logging"
+  ],
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anshuman Bhardwaj <github@theanshuman.dev>",
+  "license": "MIT",
+  "repository": "Anshuman71/worker-axiom",
+  "dependencies": {
+    "nanoid": "^4.0.2"
+  }
+}
