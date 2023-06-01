@@ -14,6 +14,7 @@ export function createAxiomClient(config) {
     const loggerID = customNanoId();
 
     let loggerData = data ? { ...data } : {};
+    let initTime = Date.now();
 
     function updateLoggerData(data) {
       loggerData = { ...loggerData, ...data };
@@ -24,24 +25,23 @@ export function createAxiomClient(config) {
       logs.push({ message, timestamp: Date.now(), data, ...data });
     }
 
-    async function sendLogs(addDuration = false) {
+    async function sendLogs(statusCode = 200) {
       const finalLogs = logs.map((d) => ({
         ...d,
         ...{ loggerID, ...loggerData },
       }));
-      if (addDuration) {
-        finalLogs.push({
-          message: "Request duration",
-          timestamp: Date.now(),
-          loggerID,
-          ...loggerData,
-          ...{
-            durationMs:
-              finalLogs[finalLogs.length - 1].timestamp -
-              finalLogs[0].timestamp,
-          },
-        });
-      }
+
+      finalLogs.push({
+        message: "Request duration",
+        timestamp: Date.now(),
+        loggerID,
+        ...loggerData,
+        ...{
+          durationMs: Date.now() - initTime,
+          status: statusCode,
+        },
+      });
+
       logs = [];
 
       return fetch(AXIOM_INGEST_URL, {

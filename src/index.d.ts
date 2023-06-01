@@ -30,10 +30,10 @@ export function createAxiomClient(config: AxiomClientConfig): (
   /**
    * Send the logs to Axiom
    *
-   * @param logDuration Log the time lapsed between first and last log. Default false.
+   * @param statusCode Add the final status code of the request to the logs. Defaults to 200.
    * @returns Promise.
    */
-  sendLogs: (logDuration?: boolean) => Promise<any>;
+  sendLogs: (statusCode?: number) => Promise<any>;
   /**
    * Update the logger data to be sent with each log.
    *
