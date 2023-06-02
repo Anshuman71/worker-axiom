@@ -15,6 +15,8 @@ Add the `AXIOM_API_TOKEN` environment variable to your Cloudflare worker.
 
 ### Logging
 
+> **Note:** You must call `sendLogs()` to send the logs to Axiom.
+
 ```js
 import { createAxiomClient, getRequestMetadata } from 'worker-axiom';
 
@@ -33,7 +35,8 @@ export default {
       method,
     });
 
-    mainLogger.sendLogs(true);
+    // must call sendLogs() to send the logs to Axiom
+    mainLogger.sendLogs();
     // ... rest of the code
 ```
 
@@ -62,7 +65,8 @@ export default {
     // project settings will be added to all the logs
     mainLogger.updateLoggerData({ ...projectSettings });
 
-    mainLogger.sendLogs(true);
+    // must call sendLogs() to send the logs to Axiom
+    mainLogger.sendLogs();
     // ... rest of the code
 ```
 
