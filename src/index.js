@@ -5,6 +5,19 @@ const customNanoId = customAlphabet(
   12
 );
 
+const flattenObject = (obj, prefix = "") =>
+  Object.keys(obj).reduce((acc, k) => {
+    const pre = prefix.length ? `${prefix}.` : "";
+    if (
+      typeof obj[k] === "object" &&
+      obj[k] !== null &&
+      Object.keys(obj[k]).length > 0
+    )
+      Object.assign(acc, flattenObject(obj[k], pre + k));
+    else acc[pre + k] = obj[k];
+    return acc;
+  }, {});
+
 export function createAxiomClient(config) {
   const AXIOM_INGEST_URL = `https://api.axiom.co/v1/datasets/${config.datasetName}/ingest`;
 
@@ -28,7 +41,19 @@ export function createAxiomClient(config) {
     }
 
     async function sendLogs(statusCode = 200) {
-      const finalLogs = logs.map((d) => {
+      let finalLogs = [
+        ...logs,
+        {
+          ...loggerData,
+          message: "Request duration",
+          timestamp: Date.now(),
+          loggerID,
+          durationMs: Date.now() - initTime,
+          status: statusCode,
+        },
+      ];
+
+      finalLogs = finalLogs.map((d) => {
         const data = {
           ...d,
           ...{ loggerID, ...loggerData },
@@ -36,18 +61,7 @@ export function createAxiomClient(config) {
         console.log(
           `Event keys count ${loggerID}===== ${Object.keys(data).length}`
         );
-        return data;
-      });
-
-      finalLogs.push({
-        message: "Request duration",
-        timestamp: Date.now(),
-        loggerID,
-        ...loggerData,
-        ...{
-          durationMs: Date.now() - initTime,
-          status: statusCode,
-        },
+        return flattenObject(data);
       });
 
       logs = [];

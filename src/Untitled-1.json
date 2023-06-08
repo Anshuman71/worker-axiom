@@ -1,0 +1,182 @@
+{
+  "outcome": "ok",
+  "scriptName": "public-api",
+  "exceptions": [],
+  "logs": [
+    {
+      "message": [
+        "Request headers: {\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip\",\n  \"accept-language\": \"en-US,en;q=0.5\",\n  \"cf-connecting-ip\": \"181.197.117.228\",\n  \"cf-ipcountry\": \"PA\",\n  \"cf-ray\": \"7d3e15a658031a45\",\n  \"cf-visitor\": \"{\\\"scheme\\\":\\\"https\\\"}\",\n  \"connection\": \"Keep-Alive\",\n  \"dnt\": \"1\",\n  \"host\": \"public.docsly.dev\",\n  \"origin\": \"https://clerk.com\",\n  \"sec-fetch-dest\": \"empty\",\n  \"sec-fetch-mode\": \"cors\",\n  \"sec-fetch-site\": \"cross-site\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0\",\n  \"x-forwarded-proto\": \"https\",\n  \"x-real-ip\": \"181.197.117.228\",\n  \"x-sparkle-from\": \"https://clerk.com/docs\",\n  \"x-sparkle-public-id\": \"public_RLLubteX3zcEskdPoy3TB0L9jZkHIpLXGhwimTkz0I8pEcM8qcMHXgwI8vkVXzQW\",\n  \"x-sparkle-version\": \"1.8.5\"\n}",
+        null
+      ],
+      "level": "log",
+      "timestamp": 1686195323910
+    },
+    {
+      "message": [
+        "Main worker function",
+        {
+          "origin": "https://clerk.com",
+          "referer": null,
+          "requestedFrom": "https://clerk.com/docs",
+          "requestOrigin": "https://clerk.com",
+          "apiEndpoint": "/api/v1.8/measure",
+          "method": "GET"
+        }
+      ],
+      "level": "log",
+      "timestamp": 1686195323910
+    },
+    {
+      "message": [
+        "Main worker cache check ",
+        {
+          "CACHEABLE_ROUTES": ["/get-comments-public", "/get-project-settings"],
+          "isCacheableRoute": "false",
+          "apiEndpoint": "/api/v1.8/measure",
+          "routePath": "/measure"
+        }
+      ],
+      "level": "log",
+      "timestamp": 1686195323910
+    },
+    {
+      "message": [
+        "User data",
+        {
+          "requestedFrom": "https://clerk.com/docs",
+          "userIP": "181.197.117.228",
+          "reqID": "7d3e15a658031a45"
+        }
+      ],
+      "level": "log",
+      "timestamp": 1686195323910
+    },
+    {
+      "message": [
+        "Project data and contributor ",
+        {
+          "country": "PA",
+          "projectId": "proj_2QCDIwsThXDAbEGsOXG54uFtyJk",
+          "hostname": "clerk.com",
+          "settings": {
+            "status": "private",
+            "private": {
+              "jwksURL": "https://clerk.clerk.com/.well-known/jwks.json",
+              "onlyAuth": false
+            },
+            "notifications": {
+              "emailEveryone": false,
+              "email": "daily",
+              "emailOnEveryComment": false
+            },
+            "allowMobile": true
+          }
+        }
+      ],
+      "level": "log",
+      "timestamp": 1686195324085
+    },
+    {
+      "message": ["==========Measure page view handler==========", null],
+      "level": "log",
+      "timestamp": 1686195324085
+    },
+    {
+      "message": [
+        {
+          "message": "adding 'data.settings.private.onlyAuth' to dataset fields would exceed the column limit of 257"
+        }
+      ],
+      "level": "log",
+      "timestamp": 1686195324172
+    }
+  ],
+  "eventTimestamp": 1686195323909,
+  "event": {
+    "request": {
+      "url": "https://public.docsly.dev/api/v1.8/measure",
+      "method": "GET",
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip",
+        "accept-language": "en-US,en;q=0.5",
+        "cf-connecting-ip": "181.197.117.228",
+        "cf-ipcountry": "PA",
+        "cf-ray": "7d3e15a658031a45",
+        "cf-visitor": "{\"scheme\":\"https\"}",
+        "connection": "Keep-Alive",
+        "dnt": "1",
+        "host": "public.docsly.dev",
+        "origin": "https://clerk.com",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "cross-site",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0",
+        "x-forwarded-proto": "https",
+        "x-real-ip": "181.197.117.228",
+        "x-sparkle-from": "https://clerk.com/docs",
+        "x-sparkle-public-id": "public_RLLubteX3zcEskdPoy3TB0L9jZkHIpLXGhwimTkz0I8pEcM8qcMHXgwI8vkVXzQW",
+        "x-sparkle-version": "1.8.5"
+      },
+      "cf": {
+        "clientTcpRtt": 10,
+        "longitude": "-79.52300",
+        "latitude": "8.99480",
+        "tlsCipher": "AEAD-AES128-GCM-SHA256",
+        "continent": "NA",
+        "asn": 18809,
+        "clientAcceptEncoding": "gzip, deflate, br",
+        "country": "PA",
+        "tlsClientAuth": {
+          "certIssuerDNLegacy": "",
+          "certIssuerSKI": "",
+          "certSubjectDNRFC2253": "",
+          "certSubjectDNLegacy": "",
+          "certFingerprintSHA256": "",
+          "certNotBefore": "",
+          "certSKI": "",
+          "certSerial": "",
+          "certIssuerDN": "",
+          "certVerified": "NONE",
+          "certNotAfter": "",
+          "certSubjectDN": "",
+          "certPresented": "0",
+          "certRevoked": "0",
+          "certIssuerSerial": "",
+          "certIssuerDNRFC2253": "",
+          "certFingerprintSHA1": ""
+        },
+        "tlsExportedAuthenticator": {
+          "clientFinished": "d5ea1b37b1661aa61ed6e4dad31308ca84b80af17b24bf95366878551e90c118",
+          "clientHandshake": "950c6921d89edf38d3cb90938913b636bbcc05e230310689bfdb72f2759acd08",
+          "serverHandshake": "4dc5e69dd47a5434fb09c05800cdbf5ccf6895e31f0aa191ea32279dbb3ab8b6",
+          "serverFinished": "924194d4a9775cf556376ab53e9ed14e436d9fb1da6d0f208cbf42f2f7962e23"
+        },
+        "tlsVersion": "TLSv1.3",
+        "city": "Panama City",
+        "timezone": "America/Panama",
+        "region": "Provincia de Panama",
+        "requestPriority": "weight=22;exclusive=0;group=11;group-weight=1",
+        "colo": "PTY",
+        "httpProtocol": "HTTP/2",
+        "regionCode": "8",
+        "asOrganization": "Tigo Panama",
+        "edgeRequestKeepAliveStatus": 1,
+        "botManagement": {
+          "corporateProxy": false,
+          "verifiedBot": false,
+          "jsDetection": {
+            "passed": false
+          },
+          "staticResource": false,
+          "detectionIds": {},
+          "score": 99
+        }
+      }
+    },
+    "response": {
+      "status": 200
+    }
+  },
+  "id": 5
+}
