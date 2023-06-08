@@ -70,6 +70,21 @@ export default {
     // ... rest of the code
 ```
 
+### Disable logging to console
+
+```js
+
+import { createAxiomClient, getRequestMetadata } from 'worker-axiom';
+
+export default {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+
+    const createLogger = createAxiomClient({ orgId: '<my-org-id>', alsoLogToConsole: false,
+    datasetName: '<axiom-data-set-name>', apiToken: env.AXIOM_API_TOKEN });
+    const mainLogger = createLogger(getRequestMetadata(request));
+  // rest of the code
+```
+
 ## Sponsers
 
 - [docsly.dev](https://www.docsly.dev) - Get actionable feedback and insights from your documentation.

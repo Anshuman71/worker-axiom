@@ -21,8 +21,10 @@ export function createAxiomClient(config) {
     }
 
     function log(message, data) {
-      console.log(message, data);
-      logs.push({ message, timestamp: Date.now(), data, ...data });
+      if (config.alsoLogToConsole !== false) {
+        console.log(message, data);
+      }
+      logs.push({ message, timestamp: Date.now(), ...data });
     }
 
     async function sendLogs(statusCode = 200) {
@@ -31,7 +33,9 @@ export function createAxiomClient(config) {
           ...d,
           ...{ loggerID, ...loggerData },
         };
-        console.log("Event keys count=====", Object.keys(data).length);
+        console.log(
+          `Event keys count ${loggerID}===== ${Object.keys(data).length}`
+        );
         return data;
       });
 

@@ -2,6 +2,7 @@ export type AxiomClientConfig = {
   apiToken: string;
   orgId: string;
   datasetName: string;
+  alsoLogToConsole?: boolean;
 };
 
 export type LoggerData = { [key: string]: any };
