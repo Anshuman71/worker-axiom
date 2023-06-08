@@ -26,10 +26,14 @@ export function createAxiomClient(config) {
     }
 
     async function sendLogs(statusCode = 200) {
-      const finalLogs = logs.map((d) => ({
-        ...d,
-        ...{ loggerID, ...loggerData },
-      }));
+      const finalLogs = logs.map((d) => {
+        const data = {
+          ...d,
+          ...{ loggerID, ...loggerData },
+        };
+        console.log("Event keys count=====", Object.keys(data).length);
+        return data;
+      });
 
       finalLogs.push({
         message: "Request duration",
