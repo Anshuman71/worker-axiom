@@ -98,7 +98,6 @@ export function getRequestMetadata(request) {
     requestID: request.headers.get("cf-ray") || "request-id-not-found",
     method: request.method,
     url: request.url,
-    headers: Object.fromEntries(request.headers),
     userIP: request.headers.get("x-real-ip") || "ip-not-found",
     country: request.headers.get("cf-ipcountry") || "country-not-found",
     serverEndpoint: serverEndpoint.href,
