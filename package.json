@@ -1,6 +1,6 @@
 {
   "name": "worker-axiom",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Axiom wrapper for Cloudflare workers",
   "keywords": [
     "axiom",
